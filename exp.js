@@ -10,8 +10,8 @@ const EduSec = Exp.querySelector(".edu");
 const EduOutput = EduSec.querySelector("ul");
 
 const Switches = document.querySelector(".switches");
-const WorkSwitch = Switches.querySelector(".work");
-const EduSwitch = Switches.querySelector(".edu");
+const WorkButton = Switches.querySelector(".work");
+const EduButton = Switches.querySelector(".edu");
 
 WorkList.forEach((Item) => {
   const Template = `
@@ -19,7 +19,6 @@ WorkList.forEach((Item) => {
     <h3 class="place">${Item.place}</h3>
     <p class="date">(${Item.start_date} - ${Item.end_date})</p>
     <p class="position">${Item.position}</p>
-    <h4>Opgaver:</h4>
     <p class="tasks">
     ${Item.tasks}
     </p>
@@ -40,14 +39,14 @@ EduList.forEach((Item) => {
 });
 
 function toggleSection(section, button) {
-  const isHidden = section.classList.toggle("hidden");
-  button.classList.toggle("active", !isHidden);
+  section.classList.toggle("hidden");
+  button.classList.toggle("off");
 }
 
-WorkSwitch.addEventListener("click", () => {
-  toggleSection(WorkSec, WorkSwitch);
+WorkButton.addEventListener("click", () => {
+  toggleSection(WorkSec, WorkButton);
 });
 
-EduSwitch.addEventListener("click", () => {
-  toggleSection(EduSec, EduSwitch);
+EduButton.addEventListener("click", () => {
+  toggleSection(EduSec, EduButton);
 });
