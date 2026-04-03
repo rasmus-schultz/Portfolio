@@ -1,0 +1,66 @@
+[
+  {
+    "place": "EasyFood, Kolding",
+    "start_date": "2024-07",
+    "end_date": "2025-01",
+    "position": "Vikar",
+    "tasks": [
+      "Produktion af fødevarer",
+      "Pakning af fødevarer",
+      "Kvalitetstjek",
+      "Rengøring"
+    ]
+  },
+  {
+    "place": "Jetpak, Kolding",
+    "start_date": "2024-04",
+    "end_date": "2024-07",
+    "position": "Vikar",
+    "tasks": [
+      "Lagerarbejde",
+      "Pak",
+      "Pluk"
+    ]
+  },
+  {
+    "place": "P. Lindberg, Vejen",
+    "start_date": "2023-06",
+    "end_date": "2024-03",
+    "position": "Projektansat",
+    "tasks": [
+      "Fotografi",
+      "Billedredigering",
+      "Hjemmesidearbejde"
+    ]
+  },
+  {
+    "place": "Vin Med Mere, Vejen",
+    "start_date": "2022-09",
+    "end_date": "2022-10",
+    "position": "Praktik",
+    "tasks": [
+      "Lagerarbejde",
+      "Pakning",
+      "Sortering"
+    ]
+  },
+  {
+    "place": "Dachser, Kolding",
+    "start_date": "2022-03",
+    "end_date": "2022-04",
+    "position": "Praktik",
+    "tasks": [
+      "Lagerarbejde",
+      "Læsning med elhund"
+    ]
+  },
+  {
+    "place": "Tegnestuen Mejeriet, Kolding",
+    "start_date": "2021-11",
+    "end_date": "2021-12",
+    "position": "Praktik",
+    "tasks": [
+      "3D modellering af bygning"
+    ]
+  }
+]
