@@ -1,22 +1,53 @@
 import { getJson } from "./getJson.js";
 
-const ExpList = await getJson("./exp.json");
+const WorkList = await getJson("./work.json");
+const EduList = await getJson("./edu.json");
 
-const Output = document.querySelector(".exp");
+const Exp = document.querySelector(".exp");
+const WorkSec = Exp.querySelector(".work");
+const WorkOutput = WorkSec.querySelector("ul");
+const EduSec = Exp.querySelector(".edu");
+const EduOutput = EduSec.querySelector("ul");
 
-ExpList.forEach((Item) => {
-  const Tasks = Item.tasks.map((task) => `<p>${task}</p>`).join("");
+const Switches = document.querySelector(".switches");
+const WorkSwitch = Switches.querySelector(".work");
+const EduSwitch = Switches.querySelector(".edu");
 
+WorkList.forEach((Item) => {
   const Template = `
 <li>
-    <h2>${Item.place}</h2>
-    <p>(${Item.start_date} - ${Item.end_date})</p>
-    <p>${Item.position}</p>
-    <div>
-    ${Tasks}
-    </div>
+    <h3 class="place">${Item.place}</h3>
+    <p class="date">(${Item.start_date} - ${Item.end_date})</p>
+    <p class="position">${Item.position}</p>
+    <h4>Opgaver:</h4>
+    <p class="tasks">
+    ${Item.tasks}
+    </p>
 </li>
 `;
+  WorkOutput.insertAdjacentHTML("beforeend", Template);
+});
 
-  Output.insertAdjacentHTML("beforeend", Template);
+EduList.forEach((Item) => {
+  const Template = `
+<li>
+    <h3 class="place">${Item.place}</h3>
+    <p class="date">(${Item.start_date} - ${Item.end_date})</p>
+    <p class="position">${Item.position}</p>
+</li>
+`;
+  EduOutput.insertAdjacentHTML("beforeend", Template);
+});
+
+function toggleSection(section, button) {
+  const isHidden = section.classList.toggle("hidden");
+  button.classList.toggle("active", !isHidden);
+}
+
+WorkSwitch.addEventListener("click", () => {
+  toggleSection(WorkSec, WorkSwitch);
+});
+
+EduSwitch.addEventListener("click", () => {
+  toggleSection(EduSec, EduSwitch);
 });
