@@ -1,15 +1,13 @@
-// Routes
 const routes = {
   "/": "./pages/home",
   "/cv": "./pages/cv",
+  "/about": "./pages/about",
 };
 
-// remove old page assets
-function clearPageAssets() {
-  document.querySelectorAll("[data-page-asset]").forEach((el) => el.remove());
+function clear_page() {
+  document.querySelectorAll("[data-page-asset]").forEach((elm) => elm.remove());
 }
 
-// load css
 function loadCSS(path) {
   const link = document.createElement("link");
   link.rel = "stylesheet";
@@ -18,7 +16,7 @@ function loadCSS(path) {
   document.head.appendChild(link);
 }
 
-let currentModule = null;
+let current_module = null;
 
 async function router() {
   const path = location.hash.slice(1) || "/";
@@ -31,27 +29,21 @@ async function router() {
     return;
   }
 
-  // 1. unmount previous page
-  if (currentModule?.unmount) {
-    currentModule.unmount();
-  }
+  clear_page();
 
-  // 2. clear old CSS
-  clearPageAssets();
-
-  // 3. load HTML
   const html = await fetch(file + "/page.html").then((r) => r.text());
   app.innerHTML = html;
 
-  // 4. load CSS
   loadCSS(file + "/page.css");
 
-  // 5. load JS module
-  currentModule = await import(file + "/page.js");
+  current_module = await import(file + "/page.js");
 
-  // 6. mount new page
-  if (currentModule?.mount) {
-    currentModule.mount();
+  if (current_module?.title) {
+    document.title = current_module.title;
+  }
+
+  if (current_module?.run) {
+    current_module.run();
   }
 }
 

@@ -4,3 +4,56 @@
   text-decoration: none;
   list-style: none;
 }
+
+@keyframes rainbow-slide {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+#nav {
+  background-color: rgb(47, 60, 66);
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 24px;
+  padding: 16px;
+
+  a {
+    color: #eee;
+    font-weight: bold;
+    font-family: "Changa One", sans-serif;
+  }
+
+  a:hover {
+    background: linear-gradient(
+      90deg,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(255, 255, 255, 0.5);
+    background-size: 200%;
+    animation: rainbow-slide 2s linear infinite;
+  }
+
+  a:active {
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2px;
+  }
+}

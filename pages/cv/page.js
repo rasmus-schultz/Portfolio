@@ -1,8 +1,12 @@
 // cv
 
-import { getJson } from "../../global/js/getJson.js";
+export const title = "Rasmus - CV";
 
-export async function mount() {
+export async function run() {
+  const { getJson } = await import(
+    new URL("../../global/js/getJson.js", document.baseURI).href
+  );
+
   const path = "./pages/cv/";
 
   const WorkList = await getJson(path + "work.json");
