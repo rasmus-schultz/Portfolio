@@ -51,9 +51,4 @@
     background-size: 200%;
     animation: rainbow-slide 2s linear infinite;
   }
-
-  a:active {
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 2px;
-  }
 }
