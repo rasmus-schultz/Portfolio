@@ -1,7 +1,5 @@
 // cv
 
-export const title = "Rasmus - CV";
-
 export async function run() {
   const { getJson } = await import(
     new URL("../../global/js/getJson.js", document.baseURI).href

@@ -28,7 +28,7 @@
     font-family: "Changa One", sans-serif;
   }
 
-  a:hover {
+  a.active {
     background: linear-gradient(
       90deg,
       #ff0000,
