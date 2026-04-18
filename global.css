@@ -28,7 +28,9 @@
     font-family: "Changa One", sans-serif;
   }
 
-  a.active {
+  /* Figure out way to have rainbow on background, but visible only through text. */
+
+  a:hover {
     background: linear-gradient(
       90deg,
       #ff0000,
