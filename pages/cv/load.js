@@ -1,5 +1,3 @@
-// cv
-
 export async function run() {
   const { getJson } = await import(
     new URL("../../global/js/getJson.js", document.baseURI).href
@@ -50,11 +48,11 @@ export async function run() {
     button.classList.toggle("off");
   }
 
-  WorkButton.addEventListener("click", () => {
+  Js.addEvent(WorkButton, "click", () => {
     toggleSection(WorkSec, WorkButton);
   });
 
-  EduButton.addEventListener("click", () => {
+  Js.addEvent(EduButton, "click", () => {
     toggleSection(EduSec, EduButton);
   });
 }
